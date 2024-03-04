@@ -1,0 +1,61 @@
+// Utilities
+
+$custom-utilities: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$custom-utilities: map-merge(
+  (
+    "font-size": (
+      rfs: false,
+      responsive: true,
+      property: font-size,
+      class: fs,
+      values: $font-sizes
+    ),
+    "line-height": (
+      property: line-height,
+      class: lh,
+      values: (
+        1: 1,
+        sm: $line-height-sm,
+        base: $line-height-base,
+        md: $line-height-md,
+        lg: $line-height-lg,
+        xl: $line-height-xl,
+        xxl: $line-height-xxl
+      )
+    ),
+    "letter-spacing": (
+      property: letter-spacing,
+      class: ls,
+      values: (
+        1: 1px,
+        2: 2px,
+        sm: 0.125em,
+        md: 0.15em,
+        lg: 0.25em
+      )
+    ),
+    "transition": (
+      property: transition,
+      class: transition,
+      values: (
+        sm: all ease 0.3s
+      )
+    )
+  ),
+  $custom-utilities
+);
+
+$utilities: map-merge($utilities, $custom-utilities);
+
+.bg-primary-linear {
+  background: linear-gradient(90deg, #4ee5ea 3.94%, #26d0a8 94.73%);
+}
+
+.hover-scale {
+  display: inline-block;
+
+  &:hover {
+    scale: 1.03;
+  }
+}

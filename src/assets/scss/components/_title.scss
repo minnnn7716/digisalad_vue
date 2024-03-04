@@ -1,0 +1,100 @@
+.title-straight,
+.title-link-straight {
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0.25em;
+    z-index: -1;
+    left: -0.25em;
+    right: 0.1em;
+    height: 10px;
+  }
+
+  &-primary {
+    &::after {
+      background-color: $primary;
+    }
+  }
+
+  &-warning {
+    &::after {
+      left: -0.4em;
+      right: -0.4em;
+      background-color: $warning;
+      bottom: 2px;
+    }
+  }
+}
+
+.title-link-straight {
+  transition: all ease 0.3s;
+
+  &::after {
+    transition: all ease 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      bottom: -0.15em;
+    }
+  }
+}
+
+.title-hasDot {
+  position: relative;
+  display: inline-block;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: -24px;
+    width: 10px;
+    height: 10px;
+    transform: translateY(-110%);
+    border-radius: 50%;
+  }
+
+  &-primary {
+    &::before {
+      background-color: $primary;
+    }
+  }
+
+  &-danger {
+    &::before {
+      background-color: $danger;
+    }
+  }
+}
+
+.title-wavy {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    right: -36px;
+    height: 13px;
+    background-repeat: repeat-x;
+    border-radius: 40px;
+  }
+
+  &-light {
+    &::after {
+      background-image: url(/src/assets/images/wavy-primary.svg);
+    }
+  }
+
+  &-dark {
+    &::after {
+      background-image: url(/src/assets/images/wavy-dark.svg);
+    }
+  }
+}

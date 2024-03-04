@@ -1,0 +1,52 @@
+.swiper {
+  height: 100%;
+  width: 100%;
+
+  &-slide {
+    padding-left: 12px;
+    padding-right: 12px;
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-up(xl) {
+      padding: 0 82px;
+    }
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+  @include media-breakpoint-up(md) {
+    display: flex !important;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 53px !important;
+  height: 53px !important;
+  background-color: $primary;
+  border-radius: 50%;
+  transition: all ease 0.3s;
+
+  &:hover {
+    transform: scale(1.03);
+    background-color: lighten($primary, 5%);
+  }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 28px !important;
+  font-weight: 900;
+  color: white;
+}
+
+.swiper-button-prev::after {
+  transform: translateX(-2px);
+}
+
+.swiper-button-next::after {
+  transform: translateX(2px);
+}

@@ -1,0 +1,45 @@
+.btn-custom {
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  transition: all ease 0.3s;
+
+  span {
+    position: relative;
+    padding-right: 66px;
+    transition: all ease 0.3s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 2px;
+      background-color: #fff;
+      transition: all ease 0.3s;
+    }
+  }
+
+  &-light {
+    background-color: $primary;
+
+    &:hover {
+      background-color: darken($primary, 5%);
+    }
+  }
+
+  &-dark {
+    background-color: $secondary;
+
+    &:hover {
+      background-color: darken($secondary, 5%);
+    }
+  }
+
+  &:hover span::after {
+    right: -4px;
+  }
+}
